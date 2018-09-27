@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.card {
+  margin: 20px;
+  display: inline-block;
+  width: 100px;
+  heigt: 100px;
+}
+
+.card.-face-down {
+  background-color: black;
+  color: white;
+}
+
+.card.-face-down img {
+  visibility: hidden;
+}
