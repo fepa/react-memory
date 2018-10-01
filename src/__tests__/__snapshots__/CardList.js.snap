@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`does not render the finished header by default 1`] = `
+<div
+  className="cardList"
+>
+  <div
+    className="card -face-down"
+    onClick={[Function]}
+  >
+    <img
+      alt="Card"
+      src="foo"
+    />
+  </div>
+  <div
+    className="card -face-down"
+    onClick={[Function]}
+  >
+    <img
+      alt="Card"
+      src="foo"
+    />
+  </div>
+</div>
+`;
+
+exports[`renders the finished header when all pairs have been found 1`] = `
+<div
+  className="cardList -finished"
+>
+  <h1>
+    You won!
+  </h1>
+  <div
+    className="card -face-down"
+    onClick={[Function]}
+  >
+    <img
+      alt="Card"
+      src="foo"
+    />
+  </div>
+  <div
+    className="card -face-down"
+    onClick={[Function]}
+  >
+    <img
+      alt="Card"
+      src="foo"
+    />
+  </div>
+</div>
+`;

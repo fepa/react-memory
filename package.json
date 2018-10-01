@@ -2,16 +2,18 @@
   "name": "memory",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://fepa.se/memory",
+  "homepage": "https://github.com/fepa/react-memory/",
   "dependencies": {
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
-    "react-scripts": "1.1.5"
+    "react-scripts": "1.1.5",
+    "react-test-renderer": "^16.5.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "test:debug": "react-scripts --inspect=0.0.0.0:9229 --inspect-brk test --runInBand",
     "eject": "react-scripts eject"
   }
 }

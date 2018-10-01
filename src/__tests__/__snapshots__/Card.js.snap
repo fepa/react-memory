@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders face down when not matched and not active 1`] = `
+<div
+  className="card -face-down"
+  onClick={[Function]}
+>
+  <img
+    alt="Card"
+    src="foo"
+  />
+</div>
+`;
+
+exports[`renders face up when matched 1`] = `
+<div
+  className="card "
+  onClick={[Function]}
+>
+  <img
+    alt="Card"
+    src="foo"
+  />
+</div>
+`;
