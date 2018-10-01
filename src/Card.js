@@ -6,7 +6,7 @@ class Card extends React.Component {
   }
 
   isActive() {
-    return this.props.activeCards.indexOf(this) > -1;
+    return this.props.activeCards.includes(this);
   }
 
   isFaceUp() {
@@ -17,7 +17,7 @@ class Card extends React.Component {
     return this.props.pairing === card.props.pairing;
   }
 
-  clickHandler() {
+  clickHandler = () => {
     if(this.isMatched() || this.isActive()) {
       return;
     } else {
@@ -27,7 +27,7 @@ class Card extends React.Component {
 
   render() {
     return (
-      <div className={"card " + (this.isFaceUp() ? '' : '-face-down')} onClick={this.clickHandler.bind(this)}>
+      <div className={"card " + (this.isFaceUp() ? '' : '-face-down')} onClick={this.clickHandler}>
         <img src={this.props.imageURL} alt="Card" />
       </div>
     );

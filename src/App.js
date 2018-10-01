@@ -11,13 +11,13 @@ class App extends React.Component {
     return { finished: false, count: 5, matchedPairs: {}, activeCards: [], imageURL: "https://placekitten.com/100/100?image=" };
   }
 
-  setCountHandler(event) {
+  setCountHandler = (event) => {
     let state = this.baseState();
     state.count = event.target.value;
     this.setState(state);
   }
 
-  setActive(card) {
+  setActive = (card) => {
     // eslint-disable-next-line
     if(this.state.activeCards.length == 2) {
       this.setState({ activeCards: [card] });
@@ -30,19 +30,19 @@ class App extends React.Component {
     }
   }
 
-  setImageService(event) {
+  setImageService = (event) => {
     this.setState({ imageURL: event.target.value });
   }
 
-  clearActive() {
+  clearActive = () => {
     this.setState({ activeCards: [] });
   }
 
-  resetHandler(event) {
+  resetHandler = (event) => {
     this.setState(this.baseState());
   }
 
-  imageURL(index) {
+  imageURL = (index) => {
     return this.state.imageURL + index;
   }
 
@@ -50,7 +50,7 @@ class App extends React.Component {
     this.setState({ finished: true });
   }
 
-  setMatch(pairing) {
+  setMatch = (pairing) => {
     this.setState(prevState => {
       prevState.matchedPairs[pairing] = true;
       return prevState;
@@ -70,19 +70,19 @@ class App extends React.Component {
           <p>Click the cards and try to pair them</p>
         </header>
         <p>
-          <input type="range" onChange={this.setCountHandler.bind(this)} value={this.state.count} step="1" max="10" min="1" /> {this.state.count * 2}
+          <input type="range" onChange={this.setCountHandler} value={this.state.count} step="1" max="10" min="1" /> {this.state.count * 2}
         </p>
         <p>
-          <input type="button" onClick={this.resetHandler.bind(this)} value="Restart game" />
+          <input type="button" onClick={this.resetHandler} value="Restart game" />
         </p>
         <p>
-          <select onChange={this.setImageService.bind(this)}>
+          <select onChange={this.setImageService}>
             <option value="https://placekitten.com/100/100?image=">placekitten.com</option>
             <option value="https://picsum.photos/100/100?image=">picsum.photos</option>
           </select>
         </p>
 
-        <CardList count={this.state.count} imageURL={this.imageURL.bind(this)} finished={this.state.finished} matchedPairs={this.state.matchedPairs} setMatch={this.setMatch.bind(this)} activeCards={this.state.activeCards} setActive={this.setActive.bind(this)} clearActive={this.clearActive.bind(this)} />
+        <CardList count={this.state.count} imageURL={this.imageURL} finished={this.state.finished} matchedPairs={this.state.matchedPairs} setMatch={this.setMatch} activeCards={this.state.activeCards} setActive={this.setActive} clearActive={this.clearActive} />
       </div>
     );
   }

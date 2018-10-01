@@ -15,7 +15,7 @@ class CardList extends React.Component {
     return this.props.activeCards[0].matches(card);
   }
 
-  checkMatch(card) {
+  checkMatch = (card) => {
     // eslint-disable-next-line
     if(this.props.activeCards.length != 1) {
       this.props.setActive(card);
@@ -31,7 +31,7 @@ class CardList extends React.Component {
   }
 
   card(key, pairing) {
-    return <Card key={key} id={key} pairing={pairing} imageURL={this.props.imageURL(pairing)} checkMatch={this.checkMatch.bind(this)} matchedPairs={this.props.matchedPairs} activeCards={this.props.activeCards} />;
+    return <Card key={key} id={key} pairing={pairing} imageURL={this.props.imageURL(pairing)} checkMatch={this.checkMatch} matchedPairs={this.props.matchedPairs} activeCards={this.props.activeCards} />;
   }
 
   cards() {
